@@ -1,10 +1,48 @@
 import React, { Component } from 'react';
 // import logo from './logo.svg';
-import yoshi from './yoshi.png';
+// import yoshi from './yoshi.png';
 // import Menu from './Menu';
 import './App.css';
 
+
 class App extends Component {
+  constructor() {
+    super();
+    this.state = {
+      header: "Je suis un Header!"
+    };
+  }
+
+  render() {
+    return (
+      <div className="App">
+        <h1>Test</h1>
+        <h2>{this.props.dataProps}</h2>
+        <h2>{this.props.contentProps}</h2>
+        <Header headerProps = {this.state.header} />
+      </div>
+    );
+  }
+}
+
+App.defaultProps = {
+  contentProps:"Je suis du contenu"
+}
+
+class Header extends Component{
+
+  render(){
+    return(
+      <h2>{this.props.headerProps}</h2>
+    );
+  }
+}
+
+export default App;
+
+
+
+/* class App extends Component {
 
   // Constructeur
   constructor() {
@@ -40,41 +78,41 @@ class App extends Component {
 
   render() {
     return (
-      <div className="App">
-        <header className="App-header">
-          <div>
+      <React.Fragment>
+        <div className="App">
+          <Menu />
+          <header className="App-header">
+
             <h1> Les stats avec React </h1>
             <p> {this.state.header} </p>
             <p> {this.state.content}</p>
             <button onClick={this.getInfos}> Cliquez ici</button>
-          </div>
 
-          <div>
-            <h1> Lesprops avec React </h1>
-            <table>
-              <tbody>
-                {this.state.data.map((value, i) => <TableRow data={value} key={i} />)}
-                {/* Ici les propriétés du composant vont être injectée dans l'application globale */}
-              </tbody>
-            </table>
-          </div>
-
-          <img src={yoshi} className="App-logo" alt="logo" />
-          <p>
-            Edit <code>src/App.js</code> and save to reload.
+            <div>
+              <h1> Lesprops avec React </h1>
+              <table>
+                <tbody>
+                  {this.state.data.map((value, i) => <TableRow data={value} key={i} />)}
+                </tbody>
+              </table>
+            </div>
+            <img src={yoshi} className="App-logo" alt="logo" />
+            <p>
+              Edit <code>src/App.js</code> and save to reload.
           </p>
-          <a
-            className="App-link"
-            href="https://www.nintendo.fr/Jeux/Nintendo-Switch/Yoshi-s-Crafted-World-1233953.html"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Yoshi Crafted World here!
+            <a
+              className="App-link"
+              href="https://www.nintendo.fr/Jeux/Nintendo-Switch/Yoshi-s-Crafted-World-1233953.html"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Yoshi Crafted World here!
           </a>
-          <Login />
-          <SubmitButton />
-        </header>
-      </div>
+            <Login />
+            <SubmitButton />
+          </header>
+        </div>
+      </React.Fragment>
     );
   }
 }
@@ -116,3 +154,4 @@ class TableRow extends Component {
     )
   }
 }
+*/
