@@ -5,5 +5,5 @@ import App from './App';
 
 ReactDOM.render(<App dataProps="Hello i'm react !" />, document.getElementById('root'));
 
-setTimeout(() => {
-   ReactDOM.unmountComponentAtNode(document.getElementById('root'));}, 10000);
+// setTimeout(() => {
+//    ReactDOM.unmountComponentAtNode(document.getElementById('root'));}, 10000);
